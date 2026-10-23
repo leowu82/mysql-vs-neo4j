@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1680" viewBox="0 0 2200 1680" role="img" aria-labelledby="title description">
+<title id="title">Catalog entity relationship diagram</title>
+<desc id="description">All sixteen catalog tables in one connected ER diagram. Resource is the central entity, with junction tables and lookups to the left, citations to the right, source notes above, and resource relationships below. Supporting citation foreign keys are listed in the tables without extra connectors.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#172b4d}.name{font-size:17px;font-weight:700}.field{font-family:monospace;font-size:14px}.key{font-size:11px;font-weight:700;fill:#415a77}.line{fill:none;stroke:#415a77;stroke-width:1.6}</style>
+<rect width="2200" height="1680" fill="#fff"/>
+<text class="name" x="100" y="45" style="font-size:26px">Catalog entity relationship diagram</text>
+<text x="100" y="155" style="font-size:16px">PK = primary key   ·   FK = foreign key   ·   Crow’s foot = many</text>
+<text x="100" y="182" style="font-size:16px">Circle = optional   ·   Bar = required   ·   Solid = identifying   ·   Dashed = non-identifying</text>
+<rect x="850" y="620" width="300" height="204" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="851" y="621" width="298" height="39" fill="#edf3f9"/>
+<path class="line" d="M850,660 H1150"/>
+<text class="name" x="862" y="646">resource</text>
+<text class="key" x="862" y="682">PK</text><text class="field" x="915" y="682">id</text>
+<text class="key" x="862" y="709"></text><text class="field" x="915" y="709">title</text>
+<text class="key" x="862" y="736"></text><text class="field" x="915" y="736">publication_value</text>
+<text class="key" x="862" y="763"></text><text class="field" x="915" y="763">publication_precision</text>
+<text class="key" x="862" y="790"></text><text class="field" x="915" y="790">container_title</text>
+<text class="key" x="862" y="817"></text><text class="field" x="915" y="817">verification_status</text>
+<rect x="430" y="360" width="300" height="177" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="431" y="361" width="298" height="39" fill="#edf3f9"/>
+<path class="line" d="M430,400 H730"/>
+<text class="name" x="442" y="386">resource_agent</text>
+<text class="key" x="442" y="422">PK,FK</text><text class="field" x="495" y="422">resource_id</text>
+<text class="key" x="442" y="449">FK</text><text class="field" x="495" y="449">agent_id</text>
+<text class="key" x="442" y="476">PK</text><text class="field" x="495" y="476">contribution_role</text>
+<text class="key" x="442" y="503">PK</text><text class="field" x="495" y="503">credit_order</text>
+<text class="key" x="442" y="530">FK</text><text class="field" x="495" y="530">source_mention_id</text>
+<rect x="100" y="360" width="250" height="96" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="101" y="361" width="248" height="39" fill="#edf3f9"/>
+<path class="line" d="M100,400 H350"/>
+<text class="name" x="112" y="386">agent</text>
+<text class="key" x="112" y="422">PK</text><text class="field" x="165" y="422">id</text>
+<text class="key" x="112" y="449"></text><text class="field" x="165" y="449">name</text>
+<path class="line" d="M850,660 L800,660 L800,425 L730,425"/>
+<path class="line" d="M841,667 L841,653 M833,667 L833,653"/>
+<path class="line" d="M731,418 L745,425 L731,432 M731,425 L745,425"/>
+<circle cx="755" cy="425" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M350,455 L430,455"/>
+<path class="line" d="M359,448 L359,462 M367,448 L367,462"/>
+<path class="line" d="M429,462 L415,455 L429,448 M429,455 L415,455"/>
+<circle cx="405" cy="455" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<rect x="430" y="580" width="300" height="123" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="431" y="581" width="298" height="39" fill="#edf3f9"/>
+<path class="line" d="M430,620 H730"/>
+<text class="name" x="442" y="606">resource_topic</text>
+<text class="key" x="442" y="642">PK,FK</text><text class="field" x="495" y="642">resource_id</text>
+<text class="key" x="442" y="669">PK,FK</text><text class="field" x="495" y="669">topic_id</text>
+<text class="key" x="442" y="696">FK</text><text class="field" x="495" y="696">source_mention_id</text>
+<rect x="100" y="580" width="250" height="123" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="101" y="581" width="248" height="39" fill="#edf3f9"/>
+<path class="line" d="M100,620 H350"/>
+<text class="name" x="112" y="606">topic</text>
+<text class="key" x="112" y="642">PK</text><text class="field" x="165" y="642">id</text>
+<text class="key" x="112" y="669"></text><text class="field" x="165" y="669">name</text>
+<text class="key" x="112" y="696">FK</text><text class="field" x="165" y="696">source_id</text>
+<path class="line" d="M850,690 L770,690 L770,645 L730,645"/>
+<path class="line" d="M841,697 L841,683 M833,697 L833,683"/>
+<path class="line" d="M731,638 L745,645 L731,652 M731,645 L745,645"/>
+<circle cx="755" cy="645" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" d="M350,675 L430,675"/>
+<path class="line" d="M359,668 L359,682 M367,668 L367,682"/>
+<path class="line" d="M429,682 L415,675 L429,668 M429,675 L415,675"/>
+<circle cx="405" cy="675" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<rect x="430" y="800" width="300" height="123" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="431" y="801" width="298" height="39" fill="#edf3f9"/>
+<path class="line" d="M430,840 H730"/>
+<text class="name" x="442" y="826">resource_audience</text>
+<text class="key" x="442" y="862">PK,FK</text><text class="field" x="495" y="862">resource_id</text>
+<text class="key" x="442" y="889">PK,FK</text><text class="field" x="495" y="889">audience_id</text>
+<text class="key" x="442" y="916">FK</text><text class="field" x="495" y="916">source_mention_id</text>
+<rect x="100" y="800" width="250" height="123" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="101" y="801" width="248" height="39" fill="#edf3f9"/>
+<path class="line" d="M100,840 H350"/>
+<text class="name" x="112" y="826">audience</text>
+<text class="key" x="112" y="862">PK</text><text class="field" x="165" y="862">id</text>
+<text class="key" x="112" y="889"></text><text class="field" x="165" y="889">name</text>
+<text class="key" x="112" y="916">FK</text><text class="field" x="165" y="916">source_id</text>
+<path class="line" d="M850,720 L770,720 L770,865 L730,865"/>
+<path class="line" d="M841,727 L841,713 M833,727 L833,713"/>
+<path class="line" d="M731,858 L745,865 L731,872 M731,865 L745,865"/>
+<circle cx="755" cy="865" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" d="M350,895 L430,895"/>
+<path class="line" d="M359,888 L359,902 M367,888 L367,902"/>
+<path class="line" d="M429,902 L415,895 L429,888 M429,895 L415,895"/>
+<circle cx="405" cy="895" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<rect x="430" y="1020" width="300" height="123" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="431" y="1021" width="298" height="39" fill="#edf3f9"/>
+<path class="line" d="M430,1060 H730"/>
+<text class="name" x="442" y="1046">resource_format</text>
+<text class="key" x="442" y="1082">PK,FK</text><text class="field" x="495" y="1082">resource_id</text>
+<text class="key" x="442" y="1109">PK,FK</text><text class="field" x="495" y="1109">format_id</text>
+<text class="key" x="442" y="1136">FK</text><text class="field" x="495" y="1136">source_mention_id</text>
+<rect x="100" y="1020" width="250" height="96" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="101" y="1021" width="248" height="39" fill="#edf3f9"/>
+<path class="line" d="M100,1060 H350"/>
+<text class="name" x="112" y="1046">format</text>
+<text class="key" x="112" y="1082">PK</text><text class="field" x="165" y="1082">id</text>
+<text class="key" x="112" y="1109"></text><text class="field" x="165" y="1109">name</text>
+<path class="line" d="M850,750 L800,750 L800,1085 L730,1085"/>
+<path class="line" d="M841,757 L841,743 M833,757 L833,743"/>
+<path class="line" d="M731,1078 L745,1085 L731,1092 M731,1085 L745,1085"/>
+<circle cx="755" cy="1085" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" d="M350,1115 L430,1115"/>
+<path class="line" d="M359,1108 L359,1122 M367,1108 L367,1122"/>
+<path class="line" d="M429,1122 L415,1115 L429,1108 M429,1115 L415,1115"/>
+<circle cx="405" cy="1115" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<rect x="1350" y="260" width="320" height="96" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="1351" y="261" width="318" height="39" fill="#edf3f9"/>
+<path class="line" d="M1350,300 H1670"/>
+<text class="name" x="1362" y="286">source_document</text>
+<text class="key" x="1362" y="322">PK</text><text class="field" x="1415" y="322">id</text>
+<text class="key" x="1362" y="349"></text><text class="field" x="1415" y="349">filename</text>
+<rect x="1350" y="620" width="320" height="150" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="1351" y="621" width="318" height="39" fill="#edf3f9"/>
+<path class="line" d="M1350,660 H1670"/>
+<text class="name" x="1362" y="646">source_mention</text>
+<text class="key" x="1362" y="682">PK</text><text class="field" x="1415" y="682">id</text>
+<text class="key" x="1362" y="709">FK</text><text class="field" x="1415" y="709">resource_id</text>
+<text class="key" x="1362" y="736">FK</text><text class="field" x="1415" y="736">source_id</text>
+<text class="key" x="1362" y="763"></text><text class="field" x="1415" y="763">citation_raw</text>
+<rect x="1810" y="620" width="300" height="150" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="1811" y="621" width="298" height="39" fill="#edf3f9"/>
+<path class="line" d="M1810,660 H2110"/>
+<text class="name" x="1822" y="646">quality_issue</text>
+<text class="key" x="1822" y="682">PK</text><text class="field" x="1875" y="682">id</text>
+<text class="key" x="1822" y="709">FK</text><text class="field" x="1875" y="709">mention_id</text>
+<text class="key" x="1822" y="736"></text><text class="field" x="1875" y="736">issue_code</text>
+<text class="key" x="1822" y="763"></text><text class="field" x="1875" y="763">review_status</text>
+<rect x="1350" y="1020" width="320" height="177" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="1351" y="1021" width="318" height="39" fill="#edf3f9"/>
+<path class="line" d="M1350,1060 H1670"/>
+<text class="name" x="1362" y="1046">identifier</text>
+<text class="key" x="1362" y="1082">PK</text><text class="field" x="1415" y="1082">id</text>
+<text class="key" x="1362" y="1109">FK</text><text class="field" x="1415" y="1109">resource_id</text>
+<text class="key" x="1362" y="1136">FK</text><text class="field" x="1415" y="1136">source_mention_id</text>
+<text class="key" x="1362" y="1163"></text><text class="field" x="1415" y="1163">identifier_kind</text>
+<text class="key" x="1362" y="1190"></text><text class="field" x="1415" y="1190">identifier_value</text>
+<rect x="1810" y="260" width="300" height="150" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="1811" y="261" width="298" height="39" fill="#edf3f9"/>
+<path class="line" d="M1810,300 H2110"/>
+<text class="name" x="1822" y="286">planning_statement</text>
+<text class="key" x="1822" y="322">PK</text><text class="field" x="1875" y="322">id</text>
+<text class="key" x="1822" y="349">FK</text><text class="field" x="1875" y="349">source_id</text>
+<text class="key" x="1822" y="376"></text><text class="field" x="1875" y="376">statement_kind</text>
+<text class="key" x="1822" y="403"></text><text class="field" x="1875" y="403">statement_text</text>
+<rect x="1350" y="30" width="320" height="177" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="1351" y="31" width="318" height="39" fill="#edf3f9"/>
+<path class="line" d="M1350,70 H1670"/>
+<text class="name" x="1362" y="56">age_definition</text>
+<text class="key" x="1362" y="92">PK</text><text class="field" x="1415" y="92">id</text>
+<text class="key" x="1362" y="119">FK</text><text class="field" x="1415" y="119">source_id</text>
+<text class="key" x="1362" y="146">FK</text><text class="field" x="1415" y="146">audience_id</text>
+<text class="key" x="1362" y="173"></text><text class="field" x="1415" y="173">minimum_age</text>
+<text class="key" x="1362" y="200"></text><text class="field" x="1415" y="200">comparison_operator</text>
+<rect x="850" y="1370" width="380" height="231" fill="#fff" stroke="#415a77" stroke-width="1.5"/>
+<rect x="851" y="1371" width="378" height="39" fill="#edf3f9"/>
+<path class="line" d="M850,1410 H1230"/>
+<text class="name" x="862" y="1396">resource_relation</text>
+<text class="key" x="862" y="1432">PK</text><text class="field" x="915" y="1432">id</text>
+<text class="key" x="862" y="1459">FK</text><text class="field" x="915" y="1459">from_resource_id</text>
+<text class="key" x="862" y="1486">FK</text><text class="field" x="915" y="1486">to_resource_id</text>
+<text class="key" x="862" y="1513">FK</text><text class="field" x="915" y="1513">from_mention_id</text>
+<text class="key" x="862" y="1540">FK</text><text class="field" x="915" y="1540">to_mention_id</text>
+<text class="key" x="862" y="1567"></text><text class="field" x="915" y="1567">relation_kind</text>
+<text class="key" x="862" y="1594"></text><text class="field" x="915" y="1594">review_status</text>
+<path class="line" stroke-dasharray="6 4" d="M1150,690 L1350,690"/>
+<path class="line" d="M1159,683 L1159,697 M1167,683 L1167,697"/>
+<path class="line" d="M1349,697 L1335,690 L1349,683 M1349,690 L1335,690"/>
+<path class="line" d="M1325,697 L1325,683"/>
+<path class="line" stroke-dasharray="6 4" d="M1430,356 L1430,620"/>
+<path class="line" d="M1437,365 L1423,365 M1437,373 L1423,373"/>
+<path class="line" d="M1423,619 L1430,605 L1437,619 M1430,619 L1430,605"/>
+<circle cx="1430" cy="595" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M1670,710 L1810,710"/>
+<path class="line" d="M1679,703 L1679,717 M1687,703 L1687,717"/>
+<path class="line" d="M1809,717 L1795,710 L1809,703 M1809,710 L1795,710"/>
+<circle cx="1785" cy="710" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M1080,824 L1080,1090 L1350,1090"/>
+<path class="line" d="M1087,833 L1073,833 M1087,841 L1073,841"/>
+<path class="line" d="M1349,1097 L1335,1090 L1349,1083 M1349,1090 L1335,1090"/>
+<circle cx="1325" cy="1090" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M1550,770 L1550,1020"/>
+<path class="line" d="M1557,779 L1543,779 M1557,787 L1543,787"/>
+<path class="line" d="M1543,1019 L1550,1005 L1557,1019 M1550,1019 L1550,1005"/>
+<circle cx="1550" cy="995" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M1670,310 L1810,310"/>
+<path class="line" d="M1679,303 L1679,317 M1687,303 L1687,317"/>
+<path class="line" d="M1809,317 L1795,310 L1809,303 M1809,310 L1795,310"/>
+<circle cx="1785" cy="310" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M1510,260 L1510,207"/>
+<path class="line" d="M1503,251 L1517,251 M1503,243 L1517,243"/>
+<path class="line" d="M1517,208 L1510,222 L1503,208 M1510,208 L1510,222"/>
+<circle cx="1510" cy="232" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M100,900 L40,900 L40,100 L1350,100"/>
+<path class="line" d="M91,907 L91,893 M83,907 L83,893"/>
+<path class="line" d="M1349,107 L1335,100 L1349,93 M1349,100 L1335,100"/>
+<circle cx="1325" cy="100" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M1350,300 L1280,300 L1280,220 L60,220 L60,850 L100,850"/>
+<path class="line" d="M1341,307 L1341,293 M1333,307 L1333,293"/>
+<path class="line" d="M99,857 L85,850 L99,843 M99,850 L85,850"/>
+<circle cx="75" cy="850" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M1350,350 L1250,350 L1250,240 L80,240 L80,650 L100,650"/>
+<path class="line" d="M1341,357 L1341,343 M1333,357 L1333,343"/>
+<path class="line" d="M99,657 L85,650 L99,643 M99,650 L85,650"/>
+<circle cx="75" cy="650" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M930,824 L930,1370"/>
+<path class="line" d="M937,833 L923,833 M937,841 L923,841"/>
+<path class="line" d="M923,1369 L930,1355 L937,1369 M930,1369 L930,1355"/>
+<circle cx="930" cy="1345" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<path class="line" stroke-dasharray="6 4" d="M1040,824 L1040,1370"/>
+<path class="line" d="M1047,833 L1033,833 M1047,841 L1033,841"/>
+<path class="line" d="M1033,1369 L1040,1355 L1047,1369 M1040,1369 L1040,1355"/>
+<circle cx="1040" cy="1345" r="5" fill="#fff" stroke="#415a77" stroke-width="1.6"/>
+<text x="920" y="1310" text-anchor="end" style="font-size:15px">from</text>
+<text x="1050" y="1310" style="font-size:15px">to</text>
+<text x="100" y="1630" style="font-size:16px">Selected fields shown. Supporting citation keys are listed; their extra connectors are omitted for clarity.</text>
+</svg>

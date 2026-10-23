@@ -69,26 +69,11 @@ Six requested topics have no specifically tagged resource: grandchild scams, tec
 | `planning_statement` | Original audience, topic, and goal notes, plus the extra passage |
 | `age_definition` | Age limit, whether it includes that age, source, and review status |
 
-```mermaid
-erDiagram
-    SOURCE_DOCUMENT ||--o{ SOURCE_MENTION : contains
-    RESOURCE ||--|{ SOURCE_MENTION : cited_as
-    RESOURCE ||--o{ RESOURCE_AGENT : credits
-    AGENT ||--o{ RESOURCE_AGENT : contributes
-    RESOURCE ||--o{ RESOURCE_TOPIC : classified
-    TOPIC ||--o{ RESOURCE_TOPIC : describes
-    RESOURCE ||--o{ RESOURCE_AUDIENCE : intended_for
-    AUDIENCE ||--o{ RESOURCE_AUDIENCE : groups
-    RESOURCE ||--o{ RESOURCE_FORMAT : has
-    FORMAT ||--o{ RESOURCE_FORMAT : categorizes
-    RESOURCE ||--o{ IDENTIFIER : located_by
-    SOURCE_MENTION ||--o{ QUALITY_ISSUE : has
-    SOURCE_DOCUMENT ||--o{ PLANNING_STATEMENT : states
-    SOURCE_DOCUMENT ||--o{ AGE_DEFINITION : proposes
-    AUDIENCE ||--o{ AGE_DEFINITION : defined_by
-    RESOURCE ||--o{ RESOURCE_RELATION : relates_from
-    RESOURCE ||--o{ RESOURCE_RELATION : relates_to
-```
+[Open the full-size ER diagram](diagrams/er-catalog.svg) to zoom in on individual tables.
+
+![Complete catalog ER diagram with resources at the center, classifications and credits to the left, citations and identifiers to the right, source notes above, and resource relationships below.](diagrams/er-catalog.svg)
+
+The layout is maintained in [diagrams/render_er.py](diagrams/render_er.py). Regenerate the SVG with `python3 docs/diagrams/render_er.py`.
 
 Records have fixed IDs within this dataset. Database rules prevent duplicate identifiers and links to missing records. They also check that a label's source citation belongs to the same resource. Credits keep their original order.
 
