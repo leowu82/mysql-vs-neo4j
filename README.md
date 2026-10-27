@@ -2,9 +2,9 @@
 
 The five-page [PDF](VPL-1_resources.pdf) lists **50 resource mentions**. This prototype stores them as **49 records** because one website appears twice. It keeps both original citations, page numbers, access dates, audience and topic notes, goals, and issues that need review.
 
-**Use MySQL as the main catalog database.** It fits editing, searching, filtering, and reports. Neo4j is useful for exploring shared topics, audiences, contributors, and possible duplicates. This small collection does not need both databases.
+**Use MySQL as the main catalog database.** It supports editing, search, filters, and reports. Neo4j helps explore shared topics, audiences, contributors, and possible duplicates. This small collection does not need both databases.
 
-See the [analysis and comparison](docs/analysis.md) for details and diagrams. The records are in [data/catalog.json](data/catalog.json), and the counts are in [data/profile.json](data/profile.json).
+See the [analysis and comparison](docs/analysis.md) for details and diagrams. [data/catalog.json](data/catalog.json) holds the records, and [data/profile.json](data/profile.json) holds the counts.
 
 ## Run the local demo
 
@@ -20,11 +20,11 @@ python -m elder_catalog coverage
 python -m unittest discover -s tests -v
 ```
 
-The demo runs in SQLite. The phishing-video search returns `r034` and `r041`. The search for resources related to `r034` returns `r013` and `r041`, which share the phishing topic. Topic labels and audience suggestions still need review.
+The demo runs in SQLite. The phishing-video search returns `r034` and `r041`. The related-resource search for `r034` returns `r013` and `r041`, which share the phishing topic. Topic and audience labels still need review.
 
 ## Run MySQL and Neo4j
 
-Start Docker Desktop with Linux containers enabled. The setup uses MySQL 8.4 and Neo4j 5.26 Community, including patch updates for those versions. To change the default passwords, copy `.env.example` to `.env` before the first start. Existing databases keep their original passwords.
+Start Docker Desktop with Linux containers enabled. The setup uses MySQL 8.4 and Neo4j 5.26 Community and their patch updates. To change the default passwords, copy `.env.example` to `.env` before the first start. Existing databases keep their original passwords.
 
 ```powershell
 python -m elder_catalog build
@@ -36,7 +36,7 @@ python -m unittest discover -s tests -v
 Remove-Item Env:ELDER_NATIVE_TESTS
 ```
 
-These tests load the data twice, check record counts, run example searches, and check database rules. They run only when `ELDER_NATIVE_TESTS=1`. Use databases that contain only prototype data.
+These tests load the data twice, check record counts, run example searches, and check database rules. They run only when `ELDER_NATIVE_TESTS=1`. Use databases with only prototype data.
 
 | Database | Local address | Database name | User | Default password |
 | --- | --- | --- | --- | --- |
@@ -66,11 +66,11 @@ docker compose stop
 
 Run `python -m elder_catalog build` to rebuild these files. It replaces the SQLite file after a successful build, so edits to that file are lost.
 
-MySQL and Neo4j imports add or update sample records. They overwrite those records' values and review statuses. They do not remove old records or links that are missing from a later import. Before using this for ongoing catalog work, add a way to track database changes and import versions.
+MySQL and Neo4j imports add or update sample records. They overwrite those records' values and review statuses. They keep old records and links even if a later import omits them. Before regular catalog editing, add tracking for database changes and import versions.
 
 ## Source data
 
-`elder_catalog/curation.py` holds details copied from the PDF. `elder_catalog/dataset.py` reads the extracted text and tracks each record's source. The importer is written for this PDF's layout.
+`elder_catalog/curation.py` holds details copied from the PDF. `elder_catalog/dataset.py` reads the extracted text and tracks each record's source. The importer handles this PDF's layout.
 
 To extract the text again with Poppler installed:
 
